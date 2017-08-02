@@ -20,6 +20,7 @@ def plot_results(X, Y, means, covariances, index, title):
         if not np.any(Y == i):
             continue
         plt.scatter(X[Y == i, 0], X[Y == i, 1], label=label, color=color, s=20, marker="o")
+        plt.legend()
 
         # Plot an ellipse to show the Gaussian component
         angle = np.arctan(u[1] / u[0])
@@ -27,7 +28,7 @@ def plot_results(X, Y, means, covariances, index, title):
         ell = mpl.patches.Ellipse(mean, v[0], v[1], 180. + angle, color=color)
         ell.set_clip_box(splt.bbox)
         ell.set_alpha(0.5)
-        splt.add_artist(ell)
+        # splt.add_artist(ell)
 
     plt.xlim(-6., 4. * np.pi - 6.)
     plt.ylim(-5., 5.)
