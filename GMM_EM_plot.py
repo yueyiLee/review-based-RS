@@ -28,7 +28,7 @@ def plot_results(X, Y, means, covariances, index, title):
         ell = mpl.patches.Ellipse(mean, v[0], v[1], 180. + angle, color=color)
         ell.set_clip_box(splt.bbox)
         ell.set_alpha(0.5)
-        # splt.add_artist(ell)
+        splt.add_artist(ell)
 
     plt.xlim(-6., 4. * np.pi - 6.)
     plt.ylim(-5., 5.)
@@ -53,7 +53,7 @@ plt.figure(figsize=(10, 10))
 plt.subplots_adjust(bottom=.04, top=0.95, hspace=.2, wspace=.05,left=.03, right=.97)
 
 # Fit a Gaussian mixture with EM using n components
-gmm = mixture.GaussianMixture(n_components=3, covariance_type='full',max_iter=500).fit(X)
+gmm = mixture.GaussianMixture(n_components=6, covariance_type='full',max_iter=500).fit(X)
 plot_results(X, gmm.predict(X), gmm.means_, gmm.covariances_, 0,'Expectation-maximization')
 
 plt.show()
