@@ -46,8 +46,8 @@ np.random.seed(0)
 X = np.zeros((n_samples, 2))
 
 for i in range(X.shape[0]):
-    X[i, 0] = np.random.normal(1, 1.5)
-    X[i, 1] = np.random.normal(-0.5, 2)
+    X[i, 0] = np.random.normal(1, 2)
+    X[i, 1] = np.random.normal(-1, 1.5)
 
 plt.figure(figsize=(10, 10))
 plt.subplots_adjust(bottom=.04, top=0.95, hspace=.2, wspace=.05,left=.03, right=.97)
