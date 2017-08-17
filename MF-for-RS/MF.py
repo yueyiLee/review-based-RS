@@ -29,7 +29,7 @@ def sgd(data_matrix, user, item, alpha, lam, iter_num):
                     item[i,:] += alpha * (e_ui * user[u,:] - lam * item[i,:])
     return user, item
 
-user, item = sgd(rating_matrix, user_matrix, item_matrix, 0.01, 0.1, 100)
+user, item = sgd(rating_matrix, user_matrix, item_matrix, 0.001, 0.1, 1000)
 filter_matrix_entry = rating_matrix <= 0
 matrix_predict = dot(user, item.transpose())
 
@@ -86,7 +86,7 @@ print(miu, non_zero_num)
 print('the sparse rate of rating matrix is : %.3f' % (non_zero_num/2500))
 
 
-user_bias, item_bias, b_u, b_i = sgd_bias(rating_matrix, user_matrix, item_matrix, 0.01, 0.1, 500, miu)
+user_bias, item_bias, b_u, b_i = sgd_bias(rating_matrix, user_matrix, item_matrix, 0.001, 0.1, 1000, miu)
 print(user_bias)
 
 # visualize user and item feature
