@@ -37,8 +37,8 @@ matrix_predict = dot(user, item.transpose())
 matrix_predict_filtered = matrix_predict * filter_matrix_entry
 # save matrix_predict and matrix_predict_filtered to the files respectively
 # and make every element correct to two decimal places
-savetxt('matrix_predict_output.txt', matrix_predict, fmt='%.2f')
-savetxt('matrix_predict_filtered_output.txt', matrix_predict_filtered, fmt='%.2f')
+savetxt('matrix_predict.txt', matrix_predict, fmt='%.2f')
+savetxt('matrix_predict_filtered.txt', matrix_predict_filtered, fmt='%.2f')
 
 # MF for new comer
 # randomly initialize the new comer's rate
