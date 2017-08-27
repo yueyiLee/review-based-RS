@@ -5,3 +5,5 @@ this repository is the source code of my zhihu Specification "Text Mining and Pe
 "EM" folder---implement code of Expectation Maxmization responding to the related aritcle in zhihu Specification
 
 "crawler-introduction" folder---implement code of an easy crawler using Python 2.7
+
+"LDA" folder---implement code of LDA, using Gensim
